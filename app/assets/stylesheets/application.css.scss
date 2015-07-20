@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+ body {
+  background-image: asset-data-url('bog_1024_768_BG.jpg');
+  background-size: cover;
+ }
+.bog-right {
+  position: fixed;
+  margin-top: 57px;
+  margin-left: 775px;
+}
+@media (max-width: 1024px) {
+  .bog-right {
+    position: relative;
+    margin-left: auto;
+  }
+}
+.creature_form .row {
+  margin: 20px auto;
+  line-height: 24px;
+}
+.btn {
+  margin-right: 15px;
+}
+.navbar a {
+  color: white;
+}
+.navbar a:hover {
+  color: black;
+}
+.panel {
+  opacity: .6;
+  border-radius: 25px;
+}
+.panel-default>.panel-heading {
+  border-radius: inherit;
+}
+.panel-heading h3 {
+  opacity: 1;
+  font-weight: 900;
+  color: #F40076;
+}
+.panel-body ul {
+  opacity: 1;
+  font-weight: 900;
+  color: #F40076;
+}

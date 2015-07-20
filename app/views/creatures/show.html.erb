@@ -1,0 +1,17 @@
+<h3>A CREATURE</h3>
+
+<div class="row">
+  <%= link_to "&larr; back".html_safe, creatures_path %>
+
+</div>
+
+<div class="row">
+  <div class="well">
+    <p><%= @creature.name %></p>
+    <em>
+      <%= @creature.description %> |
+      Posted At: <%= @creature.created_at %>
+    </em>
+  </div>
+</div>
+

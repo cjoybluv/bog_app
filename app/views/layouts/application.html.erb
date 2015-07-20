@@ -2,13 +2,60 @@
 <html>
 <head>
   <title>BogApp</title>
+
+  <!-- Latest compiled and minified CSS & JS -->
+
+
+  <link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
 
-<%= yield %>
+<div class="container">
+
+  <!-- START NAV -->
+  <div class="header-navbar navbar navbar-right">
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to "Home",root_path %></li>
+      <li><%= link_to "Creatures",creatures_path %></li>
+    </ul>
+  </div>
+  <!-- END OF NAV -->
+
+
+  <div class="row">
+      <h1>The Bog App</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-lg-8">
+      <%= yield %>
+    </div>
+    <div class="bog-right col-md-4 col-lg-4">
+
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h3>News &amp; Blog</h3></div>
+        <div class="panel-body">
+          <!-- List group -->
+          <ul class="list-group">
+            <li class="list-group-item">bootStrap seemingly goes down from 10pm to 11pm then comes back, argh!!</li>
+            <li class="list-group-item">got panel semi-transparent</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 </body>
 </html>

@@ -1,0 +1,40 @@
+
+
+<div class="row">
+  <h2>Creature List</h2>
+  <%= link_to " Create New Creature", new_creature_path, class: 'btn btn-primary btn-xs glyphicon glyphicon-plus pull-right' %>
+</div>
+
+
+<% @creatures.each do |creature| %>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= link_to creature.name, creature %></h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+      <%= creature.description %>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-right">
+      <%= link_to "", edit_creature_path(creature), class: 'btn btn-primary btn-xs glyphicon glyphicon-pencil' %>
+      <%= link_to "", creature, method: :delete, class: 'btn btn-danger btn-xs glyphicon glyphicon-trash' %>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div class="well">
+  <h3><%= link_to creature.name, creature %></h3>
+  <em><%= creature.description %></em>
+  <span class="pull-right">
+    <%= link_to "", edit_creature_path(creature), class: 'btn btn-primary btn-xs glyphicon glyphicon-pencil' %>
+    <%= link_to "", creature, method: :delete, class: 'btn btn-danger btn-xs glyphicon glyphicon-trash' %>
+  </span>
+
+
+</div>
+ -->
+<% end %>

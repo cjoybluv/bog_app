@@ -1,0 +1,26 @@
+<h3>Edit a Creature</h3>
+
+
+<%= form_for @creature, url: {action: "update"}, html: {class: "creature_form"} do |f| %>
+
+<div class="row">
+  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <%= label_tag(:name, "Enter Creature's Name:") %>
+  </div>
+  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    <%= f.text_field :name %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <%= label_tag(:description, "Enter Creature's Description:") %>
+  </div>
+  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    <%= f.text_area :description, size: "60x12" %>
+  </div>
+</div>
+<div class="row pull-right">
+  <%= f.submit "Update" %>
+</div>
+
+<% end %>
