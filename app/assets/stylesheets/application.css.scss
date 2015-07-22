@@ -17,16 +17,34 @@
   background-image: asset-data-url('bog_1024_768_BG.jpg');
   background-size: cover;
  }
+ .bog-topbar {
+  max-height: 12px
+ }
+ .navbar {
+  min-height: 25px;
+ }
+.navbar-nav>li>a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 12px;
+}
 .bog-right {
   position: fixed;
   margin-top: 57px;
   margin-left: 775px;
+}
+.bog-form .checkbox {
+  display: inline-block;
+  margin: 0 5px 0 5px;
 }
 @media (max-width: 1024px) {
   .bog-right {
     position: relative;
     margin-left: auto;
   }
+}
+.app-header a {
+  text-decoration: none;
 }
 .creature_form .row {
   margin: 20px auto;

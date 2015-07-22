@@ -5,13 +5,19 @@
 
 </div>
 
-<div class="row">
-  <div class="well">
-    <p><%= @creature.name %></p>
-    <em>
-      <%= @creature.description %> |
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @creature.name %></h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+      <p><%= @creature.description %></p>
       Posted At: <%= @creature.created_at %>
-    </em>
+      <ul>
+        <% @creature.sightings.each do |s_id| %>
+          <li><%= s_id.description %></li>
+        <% end %>
+      </ul>
+      </div>
   </div>
 </div>
-

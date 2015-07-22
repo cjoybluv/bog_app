@@ -1,0 +1,19 @@
+<h3>A SIGHTING</h3>
+
+<div class="row">
+  <%= link_to "&larr; back".html_safe, sightings_path %>
+
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @sighting.creature.name %></h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+      <p><%= @sighting.description %></p>
+      Posted At: <%= @sighting.created_at %>
+    </div>
+  </div>
+</div>

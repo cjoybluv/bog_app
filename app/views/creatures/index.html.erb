@@ -14,11 +14,12 @@
     <h3 class="panel-title"><%= link_to creature.name, creature %></h3>
   </div>
   <div class="panel-body">
-    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
       <%= creature.description %>
     </div>
-    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-right">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 pull-right">
       <%= link_to "", edit_creature_path(creature), class: 'btn btn-primary btn-xs glyphicon glyphicon-pencil' %>
+      <%= link_to "", creature_sightings_path(creature.sightings), class: 'btn btn-primary btn-xs glyphicon glyphicon-camera' %>
       <%= link_to "", creature, method: :delete, class: 'btn btn-danger btn-xs glyphicon glyphicon-trash' %>
     </div>
   </div>
@@ -31,6 +32,7 @@
   <em><%= creature.description %></em>
   <span class="pull-right">
     <%= link_to "", edit_creature_path(creature), class: 'btn btn-primary btn-xs glyphicon glyphicon-pencil' %>
+
     <%= link_to "", creature, method: :delete, class: 'btn btn-danger btn-xs glyphicon glyphicon-trash' %>
   </span>
 

@@ -20,19 +20,39 @@
 <body>
 
 <div class="container">
+  <%= render "shared/flash" %>
 
-  <!-- START NAV -->
-  <div class="header-navbar navbar navbar-right">
-    <ul class="nav navbar-nav">
-      <li class="active"><%= link_to "Home",root_path %></li>
-      <li><%= link_to "Creatures",creatures_path %></li>
-    </ul>
+  <div class="row bog-topbar">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <!-- login -->
+      <div class="hdr-login navbar navbar-left">
+        <% if @current_user %>
+          Welcome back <%= @current_user.name %>
+          <ul class="nav navbar-nav"><li><%= link_to "logout", logout_path %></li></ul>
+        <% else %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to "login", login_path %></li>
+            <li><%= link_to "signup", signup_path %></li>
+          </ul>
+          <% end %>
+      </div>
+
+      <!-- START NAV -->
+      <div class="header-navbar navbar navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to "Home",root_path %></li>
+          <li><%= link_to "Creatures",creatures_path %></li>
+          <li><%= link_to "Sightings",sightings_path %></li>
+          <li><a href="http://cjoybluv.github.io/wdi-checkers/index.html">Checkers</a></li>
+        </ul>
+      </div>
+      <!-- END OF NAV -->
+    </div>
   </div>
-  <!-- END OF NAV -->
 
 
-  <div class="row">
-      <h1>The Bog App</h1>
+  <div class="app-header">
+      <a href="<%= root_path %>"><h1>The Bog App</h1></a>
   </div>
   <div class="row">
     <div class="col-md-8 col-lg-8">
@@ -42,13 +62,19 @@
 
       <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading"><h3>News &amp; Blog</h3></div>
+        <div class="panel-heading"><h3>Next Steps</h3></div>
         <div class="panel-body">
+
+
           <!-- List group -->
           <ul class="list-group">
-            <li class="list-group-item">bootStrap seemingly goes down from 10pm to 11pm then comes back, argh!!</li>
-            <li class="list-group-item">got panel semi-transparent</li>
+            <li class="list-group-item">Take-A-Break &gt; Checkers</li>
+            <li class="list-group-item">THEN ...</li>
+            <li class="list-group-item">connect user into sigthings CRUD</li>
+            <li class="list-group-item">fix dup creatures w/ self.join on Creature.master_id = id</li>
+            <li class="list-group-item">add Data Driven Document ala D3js ! NY Times Obama Budget</li>
           </ul>
+
         </div>
       </div>
     </div>

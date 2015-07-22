@@ -5,12 +5,28 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-   root 'home#index'
+  root 'home#index'
 
-   get 'creatures' => 'creatures#index', as: 'creatures'
+  get 'creatures' => 'creatures#index', as: 'creatures'
+
+  get 'sightings' => 'sightings#index', as: 'sightings'
+
+  get 'checkers' => 'checkers#index', as: 'checkers'
+
+  get 'creature_sightings' => 'sightings#creature_sightings', as: 'creature_sightings'
+
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+
+  get 'logout' => 'sessions#destroy'
+
+  get 'signup' => 'users#new'
+  post 'signup' => 'users#create'
+
 
   resources :creatures
 
+  resources :sightings
 
 
   # Example of regular route:

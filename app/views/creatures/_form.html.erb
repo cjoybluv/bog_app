@@ -1,0 +1,19 @@
+
+<%= bootstrap_form_for @creature do |c| %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= c.text_field :name %></h3>
+  </div>
+  <div class="panel-body bog-form">
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+      <p><%= c.text_area :description %></p>
+      <%= c.collection_check_boxes :tag_ids, @tags, :id, :name %>
+    </div>
+  </div>
+  <div class="panel-footing">
+    <%= c.primary %>
+  </div>
+</div>
+
+<% end %>
