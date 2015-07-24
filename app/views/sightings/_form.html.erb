@@ -1,24 +1,16 @@
 
-<%= form_for @sighting, url: {action: form_action}, html: {class: "creature_form"} do |f| %>
+<%= bootstrap_form_for @sighting do |s| %>
 
-<div class="row">
-  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <%= label_tag(:creature_id, "Enter Creature's ID:") %>
+  <div class="panel panel-default">
+     <div class="panel-body bog-form">
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        <p><%= s.text_area :description %></p>
+        <p><%= s.text_field :location_id %></p>
+        <p><%= s.text_field :user_id %></p>
+      </div>
+    </div>
+    <div class="panel-footing">
+      <%= s.primary %>
+    </div>
   </div>
-  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-    <%= f.text_field :creature_id %>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <%= label_tag(:description, "Enter Description of Sighting:") %>
-  </div>
-  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-    <%= f.text_area :description, size: "60x12" %>
-  </div>
-</div>
-<div class="row pull-right">
-  <%= f.submit form_action.capitalize %>
-</div>
-
 <% end %>

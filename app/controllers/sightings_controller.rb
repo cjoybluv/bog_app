@@ -4,6 +4,7 @@ class SightingsController < ApplicationController
   def index
     # render params
     @sightings = Sighting.all
+
   end
 
 
@@ -43,7 +44,8 @@ class SightingsController < ApplicationController
    private
 
   def sighting_params
-    params.require(:sighting).permit(:description,:creature_id)
+    # params.require(:sighting).permit(:description,:creature_id)
+    params.require(:sighting).permit(:description,:creature_id, :location_id, :user_id)
   end
 
 
